@@ -129,4 +129,33 @@ ON a.player = b.player");
         return $query->result();
     }
 
+    function insertCertificate($token, $piece, $player, $datetime) {
+        $data = array(
+            'token' => $token,
+            'piece' => $piece,
+            'player' => $player,
+            'datetime' => $datetime
+        );
+
+        $this->db->insert('collections', $data);
+    }
+
+    function truncate() {
+
+        $this->db->truncate('collections');
+    }
+
+    function tokenPiece($token){
+                if (!empty($token)) {
+            $this->db->select('piece');
+            $this->db->from('collections');
+            $this->db->where('token', (string) $token);
+            $query = $this->db->get();
+            if ($query->num_rows() == 1) {
+                return $query->row()->piece;
+            } else {
+                return false;
+            }
+        }
+    }
 }
