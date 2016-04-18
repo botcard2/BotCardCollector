@@ -127,4 +127,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('quotes','players', 'collections');
+$autoload['model'] = array('players', 'collections');
