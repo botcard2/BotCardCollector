@@ -58,4 +58,4 @@ $route['Assembly'] = 'assembly';
 $route['reg_form'] = 'reg_form';
 $route['Portfolio/(:any)'] = 'portfolio/index/$1';
 //WHU 14-Apr-2016
-$route['registerlink'] = 'registerlink';
+$route['Registration'] = 'Registration';

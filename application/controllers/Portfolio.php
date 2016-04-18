@@ -19,43 +19,31 @@ class Portfolio extends Application {
     //-------------------------------------------------------------
 
     function index($linkedname = null) {
-        
-        //if theres a session retriever username
 
-        
-        if ($linkedname == null) {
-            $linkedname = $this->session->userdata['selectedname'];
-            $this->data['puthere'] = $linkedname;
-            $this->data['pagebody'] = 'portfolio'; // this is the view we want shown
-            //get the value from the form
-            $selecteditem = $this->input->post('selectedname');
-            $this->session->userdata['selectedname'] = $selecteditem;
-            $this->data['nameselected'] = $this->session->userdata['selectedname'];
-            $this->getPlayerTrans($selecteditem);
-            
+        //if theres a session retriever username
+        if ($this->session->userdata('selectedname')) {
+            if ($linkedname == null) {
+                $linkedname = $this->session->userdata['selectedname'];
+                $this->data['puthere'] = $linkedname;
+                $this->data['pagebody'] = 'portfolio'; // this is the view we want shown
+                //get the value from the form
+                $selecteditem = $this->input->post('selectedname');
+                $this->session->userdata['selectedname'] = $selecteditem;
+                $this->data['nameselected'] = $this->session->userdata['selectedname'];
+                $this->getPlayerTrans($selecteditem);
+            }
         } else {
             $selecteditem = $this->input->post('selectedname');
-            if($linkedname != $selecteditem && $selecteditem !=""){
+            if ($linkedname != $selecteditem && $selecteditem != "") {
                 $linkedname = $selecteditem;
             }
-//            $linkitem = $linkedname;
-//            $this->session->userdata['selectlink'] = $linkitem;
-//            $this->data['linkvalue'] = $this->session->userdata['selectlink'];
-//            $this->data['nameselected'] =  $this->session->userdata['selectlink'];
-//            $this->getPlayerTrans($linkitem);
-//            $linkedname = $this->session->userdata['selectedname'];
-//            $this->data['puthere'] = $linkedname;
             $this->data['pagebody'] = 'portfolio'; // this is the view we want shown
             //get the value from the form
-            $selecteditem = $linkedname;//$this->input->post('selectedname');
+            $selecteditem = $linkedname; //$this->input->post('selectedname');
             $this->session->userdata['selectedname'] = $selecteditem;
             $this->data['nameselected'] = $this->session->userdata['selectedname'];
             $this->getPlayerTrans($selecteditem);
         }
-
-
-
-
 
         $this->getTotal();
         //transaction table loaded
@@ -65,7 +53,6 @@ class Portfolio extends Application {
         // players table loaded
         $this->getPlayerTable();
 
-        //
         $this->getCollectionsTable();
         $this->render();
         //$this->rendertest($linkedname);

@@ -23,6 +23,15 @@
             <td>Value</td>
             <td>Datetime</td>
         </tr>
+        {transaction}
+        <tr>
+            <td>{player}</td>
+            <td>{series}</td>
+            <td>{trans}</td>
+            <td>{datetime}</td>
+        </tr>
+        {/transaction}
+        <!--
         {personaltransinfo}
         <tr>
             <td>{player}</td>
@@ -31,6 +40,7 @@
             <td>{datetime}</td>
         </tr>
         {/personaltransinfo}
+        -->
         <!--        {transinfo}
             <tr>
                   <td>{player}</td>
