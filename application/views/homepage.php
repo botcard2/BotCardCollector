@@ -3,19 +3,28 @@
  * Menu navbar, just an unordered list
  */
 ?>
-<div>
-{loginname}
-{password}
-</div>
+
 <div id="gamestatus" >
     <h1>Game Status</h1>
-    <h3>Round: 0</h3>
+    <h3>Round: {bccRound}</h3>
+    <h3>State: {bccState}</h3>
+    <h3>Countdown: {bccCountdown}</h3>
+    <h3>Current: {bccCurrent}</h3>
+    <h3>Duration: {bccDuration}</h3>
+    <h3>Upcoming: {bccUpcoming}</h3>
+    <h3>Alarm: {bccAlarm}</h3>
+    <h3>Now: {bccNow}</h3>
+    <form method="post">
+        <button name="resetStatus" onclick="welcome">Reset</button>
+    </form>
+    <!-- 
     <h3>Aware pieces</h3>
     <ul>
         {awarepieces}
         <li><a href="#">{piece}<img class="botimg" src="/data/{piece}.jpeg" /></a></li>
         {/awarepieces}
     </ul>
+    -->
 </div>
 <div id="allplayers" >
     <h1>Players' Info</h1>
@@ -30,7 +39,7 @@
         {playerinfo}
         <tr>
             <!--<td>{playerid}</td>-->
-       
+            
             <td value="{playername}" name="linkname" ><a href="Portfolio/{playername}" onclick="this.form.submit()">{playername}</a></td>
             <td>{peanuts}</td>
             <td>{total}</td>
@@ -38,8 +47,8 @@
         {/playerinfo}
     </table>
      </form>
-    <form action="" method="get">
-        <button class="resetBtn" type="reset" value="Reset" style="float:right">Reset</button>
+    <form action="" method="post">
+        <button class="resetBtn" name="resetPeanuts" value="resetPeanuts" style="float:right">Reset Peanuts</button>
     </form>
 </div>
 <!-- 

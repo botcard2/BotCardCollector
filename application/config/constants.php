@@ -1,6 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+// location of data folders
+define('DATAPATH', './data/');
+define('XMLSUFFIX','.xml');
+define('BCCURL','http://ken-botcards.azurewebsites.net/');
 /*
 |--------------------------------------------------------------------------
 | Display Debug backtrace
