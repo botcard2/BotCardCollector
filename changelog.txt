@@ -1,0 +1,3 @@
+Newest changes at top:
+
+14 April 2016 12:10PM: Added registerView and altered config file, created repo based  on asgn1 

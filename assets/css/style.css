@@ -1,0 +1,57 @@
+/* CSS definition file containing site stylesheet */
+body {}
+#content {width:100%; margin-left:5% auto;margin-right:5% auto;}
+#footer {font-size: small; font-style:italic;text-align:center;}
+.row>div {margin-bottom:10px;}
+#gamestatus, #selection{width:400px; height:auto; float:left; display:inline;
+  background-color: #444;
+  color: #99ffff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}
+#allplayers,#collectionInfo{width:400px; height:auto; float:right; display:inline;
+  background-color: #444;
+  color: #ff00ff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(4,  150px  10px);
+  grid-template-rows: repeat(2,  auto 10px);
+  background-color: #fff;
+  color: #ff00ff;
+}
+
+
+/* tr:nth-child(even){background-color: #f2f2f2}
+.resetBtn {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+*/
+
+a .botimg { display:none; }
+a:hover .botimg { display:block; }
