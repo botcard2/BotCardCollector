@@ -7,7 +7,6 @@
      <br/>
      <button name="login" onclick="this.form.submit()">User Login</button>
      <!-- WHU Apr 14, 2016-->
-     <a href="registerView.php" name="registerlink">User Registration</a>
-     {registerlink}
-     {/registerlink}
+     <a href="Registration" name="registerlink">User Registration</a>
+
    </form>
